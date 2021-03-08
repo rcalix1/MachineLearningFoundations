@@ -118,7 +118,7 @@ for i in range(1, 100001):
         epochs = epochs + 1
 
     if i % 100 == 0:
-        os.system('clear')
+        os.system('cls')
         print("Episode: {}".format(i))
 
 print("Training Finished\n")
