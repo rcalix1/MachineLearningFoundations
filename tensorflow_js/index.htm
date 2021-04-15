@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" ></script>
+
+<script>
+
+async function load() {
+     const url = 'http://localhost/test2/MLjscript/model.json';
+     const model = await tf.loadLayersModel(url);
+     return model;
+};
+
+function predict(model) {
+    const userInput = document.getElementById('userInput').value;
+    const inputTensor = tf.tensor([parseInt(userInput)]);
+    
+    model.then(model => {
+        let result = model.predict(inputTensor);
+        result = result.round().dataSync()[0];
+        alert(result ? "odd" : "even");
+        
+    });
+};
+
+const model = load();
+
+</script>
+</head>
+
+<body>
+<h3>  ML example  </h3>
+
+<input id="userInput" type="text">  </input>
+
+<button onclick="predict(model)">Predict</button>
+
+</body>
+
+</html>
