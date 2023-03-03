@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" ></script>
+
+<script>
+
+async function load() {
+     const url = 'https://rcalix1.github.io/MachineLearningFoundations/tensorflow_js/deployment/XOR/model.json';
+     const model = await tf.loadLayersModel(url);
+     return model;
+};
+
+function predict(model) {
+    const userInput1 = document.getElementById('userInput1').value;
+    const userInput2 = document.getElementById('userInput2').value;
+    const inputTensor = tf.tensor(   [[parseInt(userInput1), parseInt(userInput2)    ]]     );
+    
+    model.then(model => {
+        let result = model.predict(inputTensor);
+        alert(result);
+        // result = result.round().dataSync()[0];
+        // alert(result ? "odd" : "even");
+        
+    });
+};
+
+const model = load();
+
+</script>
+</head>
+
+<body>
+<h3>  XOR example  </h3>
+
+<input id="userInput1" type="text">  </input>
+<input id="userInput2" type="text">  </input>
+
+<button onclick="predict(model)">Predict</button>
+
+</body>
+
+</html>
