@@ -20,7 +20,7 @@ Nevertheless, the often-miscited Minsky/Papert text caused a significant decline
 
 ## Consider the perceptron as illustrated in the figure above.
 
-![The perceptron](perceptron.Activations.png "perceptron")
+![The perceptron](perceptron.activations.png "perceptron")
 
 I know:
 
