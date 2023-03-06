@@ -32,3 +32,12 @@ Is the perceptron equivalent to a non-linear classifier if its activation functi
 In other words:
 
 Can the perceptron represent any complex function, if using sigmoid as its activation function?
+
+## Answer
+
+The network in the diagram has an input layer and an output layer, but no hidden layers. 
+
+This type of network can't perform nonlinear classification or implement arbitrary nonlinear functions, regardless of the choice of activation function.
+
+However, things change radically once the network contains at least one hidden layer with sigmoidal (or other nonlinear) activation function. Such a network can indeed perform nonlinear classification and approximate arbitrary functions (but doing so may require adding vastly more units to the network). This is a consequence of the universal approximation theorem.
+
