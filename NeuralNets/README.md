@@ -22,10 +22,10 @@ Nevertheless, the often-miscited Minsky/Papert text caused a significant decline
 
 ![The perceptron](perceptron.activations.png "perceptron")
 
-I know:
+Consider:
 
 If the activation function is linear, i.e. the first three cases, then the perceptron is equivalent to a linear classifier.
-However, I just wonder:
+However, consider:
 
 Is the perceptron equivalent to a non-linear classifier if its activation function is sigmoid?
 
