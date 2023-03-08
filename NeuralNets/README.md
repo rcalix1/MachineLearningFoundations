@@ -41,3 +41,7 @@ This type of network can't perform nonlinear classification or implement arbitra
 
 However, things change radically once the network contains at least one hidden layer with sigmoidal (or other nonlinear) activation function. Such a network can indeed perform nonlinear classification and approximate arbitrary functions (but doing so may require adding vastly more units to the network). This is a consequence of the universal approximation theorem.
 
+## Notable papers
+
+* David E. Rumelhart, Geoffrey E. Hinton & Ronald J. Williams. (1986) Learning representations by back-propagating errors. Nature 323, 533–536. (http://www.cs.utoronto.ca/~hinton/absps/naturebp.pdf)
+
