@@ -44,4 +44,7 @@ However, things change radically once the network contains at least one hidden l
 ## Notable papers
 
 * David E. Rumelhart, Geoffrey E. Hinton & Ronald J. Williams. (1986) Learning representations by back-propagating errors. Nature 323, 533–536. (http://www.cs.utoronto.ca/~hinton/absps/naturebp.pdf)
+* Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. 15(56):1929−1958, 2014. (https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
+* Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. (2015) Deep Residual Learning for Image Recognition. (https://arxiv.org/pdf/1512.03385.pdf)
+
 
