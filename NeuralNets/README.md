@@ -45,6 +45,10 @@ However, things change radically once the network contains at least one hidden l
 
 * David E. Rumelhart, Geoffrey E. Hinton & Ronald J. Williams. (1986) Learning representations by back-propagating errors. Nature 323, 533–536. (http://www.cs.utoronto.ca/~hinton/absps/naturebp.pdf)
 * Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. 15(56):1929−1958, 2014. (https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
+* Kurt Hornik, Maxwell Stinchcombe, Halbert White. (1989). Multilayer feedforward networks are universal approximators. Neural Networks
+Volume 2, Issue 5, 1989, Pages 359-366.  (https://www.cs.cmu.edu/~epxing/Class/10715/reading/Kornick_et_al.pdf)
+* Hongzhou Lin, Stefanie Jegelka. (2018). ResNet with one-neuron hidden layers is a Universal Approximator. NIPS (https://papers.nips.cc/paper/2018/file/03bfc1d4783966c69cc6aef8247e0103-Paper.pdf)
+
 
 
 
