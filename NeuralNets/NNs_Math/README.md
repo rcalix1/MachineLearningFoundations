@@ -2,4 +2,4 @@
 
 * Dot product
 * Calculate gradients
-* 
+* Convolutions intuition
