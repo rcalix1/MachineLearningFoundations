@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it a panda</title>
+    <style>
+        .no-margin-ul {
+            margin: 0;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Is it a panda?</h2>
+    <h2>Danielle Turner, David Higley, Joseph Shapiro</h2>
+    <input type="file" name="Image" onchange="inputChanged(event)" autocomplete="off">
+    <p>
+        Current status: <span id="status-output">Loading model and scripts</span>
+    </p>
+    <p>
+        Model output: <span id="model-output"></span>
+    </p>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jimp/0.22.10/jimp.min.js" integrity="sha512-I7QM5mEu+5AZVAE1kZqUs1gihBFmO7h0JF6sMh5kPCatn/J2PsdsCMCtZ3FNMbutSV9WK7CSGUDukY9+MggvLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script>
+        const statusDict = [
+            "Waiting for file",
+            "Loading file",
+            "Performing inference",
+            "Inference complete"
+        ]
+
+        const modelClasses = [
+            "not a panda",
+            "panda",
+            "red panda"
+        ]
+
+        const statusOutput = document.getElementById("status-output")        
+
+        async function getImageTensorFromPath(path, dims =  [1, 3, 32, 32]) {
+            // 1. load the image  
+            var image = await loadImagefromPath(path, dims[2], dims[3]);
+            // 2. convert to tensor
+            var imageTensor = imageDataToTensor(image, dims);
+            // 3. return the tensor
+            return imageTensor;
+        }
+
+        function imageDataToTensor(image, dims) {
+            // 1. Get buffer data from image and create R, G, and B arrays.
+            var imageBufferData = image.bitmap.data;
+            const [redArray, greenArray, blueArray] = new Array(new Array(), new Array(), new Array());
+
+            // 2. Loop through the image buffer and extract the R, G, and B channels
+            for (let i = 0; i < imageBufferData.length; i += 4) {
+                redArray.push(imageBufferData[i]);
+                greenArray.push(imageBufferData[i + 1]);
+                blueArray.push(imageBufferData[i + 2]);
+                // skip data[i + 3] to filter out the alpha channel
+            }
+
+            // 3. Concatenate RGB to transpose [224, 224, 3] -> [3, 224, 224] to a number array
+            const transposedData = redArray.concat(greenArray).concat(blueArray);
+
+            // 4. convert to float32
+            let i, l = transposedData.length; // length, we need this for the loop
+            // create the Float32Array size 3 * 224 * 224 for these dimensions output
+            const float32Data = new Float32Array(dims[1] * dims[2] * dims[3]);
+            for (i = 0; i < l; i++) {
+                float32Data[i] = ((transposedData[i] / 255.0) - 0.5) / 0.5; // convert to float and normalize
+            }
+            // 5. create the tensor object from onnxruntime-web.
+            const inputTensor = new ort.Tensor("float32", float32Data, dims);
+            console.log(inputTensor)
+            return inputTensor;
+        }
+
+        
+        async function loadImagefromPath(path, width = 32, height = 32) {
+            // Use Jimp to load the image and resize it.
+            var imageData = await Jimp.read(path).then((imageBuffer) => {
+                return imageBuffer.cover(width, height);
+            });
+
+            return imageData;
+        }
+
+        const isTypedArray = (function() {
+            const TypedArray = Object.getPrototypeOf(Uint8Array);
+            return (obj) => obj instanceof TypedArray;
+        })();
+
+        function sortedClasses(classProbabilities) {
+            const probs =
+                isTypedArray(classProbabilities) ? Array.prototype.slice.call(classProbabilities) : classProbabilities;
+
+            const sorted = probs.map((prob, index) => [prob, index]).sort((a, b) => b[0] - a[0])
+
+            const topClasses = sorted.map(probIndex => {
+                const iClass = modelClasses[probIndex[1]];
+                return {
+                    index: parseInt(probIndex[1], 10),
+                    name: iClass.replace(/_/g, ' '),
+                    probability: probIndex[0]
+                };
+            });
+            return topClasses;
+        }
+
+        function softmax(arr) {
+            const C = Math.max(...arr);
+            const d = arr.map((y) => Math.exp(y - C)).reduce((a, b) => a + b);
+            return arr.map((value, index) => {
+                return Math.exp(value - C) / d;
+            });
+        }
+
+
+        async function inference(path) {
+            try {
+                const session = await ort.InferenceSession.create('./finalProject_model.onnx');
+
+                const imageTensor = await getImageTensorFromPath(path);
+
+                const feeds = { input: imageTensor };
+
+                statusOutput.textContent = statusDict[2];
+
+                const results = await session.run(feeds);
+                console.log(session.outputNames);
+
+                const dataOutput = results.output.data;
+                console.log(dataOutput);
+                const softmaxOutput = softmax(Array.prototype.slice.call(dataOutput));
+                return softmaxOutput;
+
+            } catch (e) {
+                return e;
+                // document.write(`failed to inference ONNX model: ${e}.`);
+            }
+        }
+
+        async function inputChanged(event) {
+            statusOutput.textContent = statusDict[1];
+            const inferenceResult = await inference(URL.createObjectURL(event.target.files[0]));
+            const inferenceResultClasses = sortedClasses(inferenceResult);
+
+            document.getElementById("model-output").replaceChildren();
+
+            for (index in inferenceResultClasses) {
+                const outputTitle = document.createElement("span");
+                const outputData = document.createElement("ul");
+                const dataClassId = document.createElement("li");
+                const dataClassProb = document.createElement("li");
+                const outputSpacer = document.createElement("br");
+
+                if (index == 0) {
+                    outputTitle.classList.add("bold");
+                }
+                outputData.classList.add("no-margin-ul");
+                
+                outputTitle.textContent = inferenceResultClasses[index].name;
+                dataClassId.textContent = `Class id: ${inferenceResultClasses[index].index}`;
+                dataClassProb.textContent = `Probability: ${inferenceResultClasses[index].probability.toFixed(4)}`;
+
+                outputData.appendChild(dataClassId);
+                outputData.appendChild(dataClassProb);
+
+                document.getElementById("model-output").appendChild(outputSpacer);
+                document.getElementById("model-output").appendChild(outputTitle);
+                document.getElementById("model-output").appendChild(outputData);
+            }
+            // document.getElementById("model-output").textContent = inferenceResult;
+            statusOutput.textContent = statusDict[3];
+        }
+
+        statusOutput.textContent = statusDict[0];
+    </script>
+</body>
+</html>

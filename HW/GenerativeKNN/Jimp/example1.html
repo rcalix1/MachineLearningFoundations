@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image read in and resized</title>
+    <style>
+        .no-margin-ul {
+            margin: 0;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+    
+<body>
+    <h2>Images to resize with Jimp</h2>
+    <h2>Images Jimp</h2>
+    <input type="file" name="Image" onchange="inputChanged(event)" autocomplete="off">
+    <p>
+        Current status: <span id="status-output">Nothing</span>
+    </p>
+    <p>
+       Img: <span id="model-output"></span>
+    </p>
+    <div id="img-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jimp/0.22.10/jimp.min.js" integrity="sha512-I7QM5mEu+5AZVAE1kZqUs1gihBFmO7h0JF6sMh5kPCatn/J2PsdsCMCtZ3FNMbutSV9WK7CSGUDukY9+MggvLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script>
+        const statusDict = [
+            "Waiting for file",
+            "Loading file",
+            "Performing inference",
+            "Inference complete"
+        ]
+
+        const modelClasses = [
+            "setosa",
+            "virginica",
+            "versicolor"
+        ]
+
+        const statusOutput = document.getElementById("status-output")        
+
+
+        
+        async function getImageTensorFromPath(path, dims =  [1, 3, 32, 32]) {
+            
+            rc_resize_jimp();
+            
+            // 1. load the image  
+            var image = await loadImagefromPath(path, dims[2], dims[3]);
+            // 2. convert to tensor
+            var imageTensor = imageDataToTensor(image, dims);
+            // 3. return the tensor
+            return imageTensor;
+        }
+
+
+
+        
+        function imageDataToTensor(image, dims) {
+            // 1. Get buffer data from image and create R, G, and B arrays.
+            var imageBufferData = image.bitmap.data;
+            const [redArray, greenArray, blueArray] = new Array(new Array(), new Array(), new Array());
+
+            // 2. Loop through the image buffer and extract the R, G, and B channels
+            for (let i = 0; i < imageBufferData.length; i += 4) {
+                redArray.push(imageBufferData[i]);
+                greenArray.push(imageBufferData[i + 1]);
+                blueArray.push(imageBufferData[i + 2]);
+                // skip data[i + 3] to filter out the alpha channel
+            }
+
+            // 3. Concatenate RGB to transpose [224, 224, 3] -> [3, 224, 224] to a number array
+            const transposedData = redArray.concat(greenArray).concat(blueArray);
+
+            // 4. convert to float32
+            let i, l = transposedData.length; // length, we need this for the loop
+            // create the Float32Array size 3 * 224 * 224 for these dimensions output
+            const float32Data = new Float32Array(dims[1] * dims[2] * dims[3]);
+            for (i = 0; i < l; i++) {
+                float32Data[i] = ((transposedData[i] / 255.0) - 0.5) / 0.5; // convert to float and normalize
+            }
+            // 5. create the tensor object from onnxruntime-web.
+            const inputTensor = new ort.Tensor("float32", float32Data, dims);
+            console.log(inputTensor)
+            return inputTensor;
+        }
+
+
+            async function rc_resize() {
+                const Jimp = require('jimp');
+                // Read the image.
+               const image = await Jimp.read('https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg');
+               // Resize the image to width 150 and heigth 150.
+               await image.resize(150, 150);
+              // Save and overwrite the image
+                image.write("lena-half-bw.png");
+                await image.writeAsync('C:\Users\rcalix.PNW.000\Desktop\textOverlay.png');
+                image.write('output.jpg', res.download('output.jpg')); // save
+              await image.writeAsync('test/${Date.now()}_150x150.png');
+            }
+
+        
+        async function rc_resize_jimp() {
+            
+            rc_resize();
+            alert("end");
+        }
+
+
+  
+        
+        async function loadImagefromPath(path, width = 32, height = 32) {
+            // Use Jimp to load the image and resize it.
+            
+            var imageData = await Jimp.read(path).then((imageBuffer) => {
+                return imageBuffer.cover(width, height);
+            });
+            
+             alert("end3");
+             await  imageData.writeAsync('RC_panda.jpg');
+            
+             imageData.getBase64Async(jimp.MIME_JPEG).then(newImage => {
+                    let tag = document.createElement("img");
+                    tag.src = newImage;
+                    document.getElementById("img-container").append(tag);
+             });
+
+            alert("hello");
+
+            return imageData;
+        }
+
+
+        
+        const isTypedArray = (function() {
+            const TypedArray = Object.getPrototypeOf(Uint8Array);
+            return (obj) => obj instanceof TypedArray;
+        })();
+
+       
+
+     
+
+        async function inference(path) {
+            try {
+            
+                const imageTensor = await getImageTensorFromPath(path);
+
+                console.log(session.outputNames);
+
+            } catch (e) {
+                return e;
+                // document.write(`failed to inference ONNX model: ${e}.`);
+            }
+        }
+
+        
+        async function inputChanged(event) {
+            
+            statusOutput.textContent = statusDict[1];
+            
+            const inferenceResult = await inference(URL.createObjectURL(event.target.files[0]));
+            
+        }
+          
+
+        statusOutput.textContent = statusDict[0];
+    </script>
+</body>
+</html>
