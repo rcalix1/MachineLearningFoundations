@@ -13,7 +13,7 @@
 jimp.read("https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg").then(image => {
 
   //resize image using "contain" mode
-  image.contain(1000, 1500);
+  image.contain(400, 300);
 
   //retrieve image
   image.getBase64Async(jimp.MIME_JPEG).then(newImage => {
