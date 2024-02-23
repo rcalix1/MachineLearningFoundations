@@ -18,3 +18,7 @@ Information
 
 * You will need to use your own data but this app should work
 * https://github.com/rcalix1/ProbabilityDensityFunctionsFromNeuralNets/tree/main/experiments/2023/july2023/GANs/PyScriptExamples/example3
+
+## Convert annotated images to CSV
+
+* https://github.com/rcalix1/ProbabilityDensityFunctionsFromNeuralNets/blob/main/experiments/2023/july2023/GANs/PyScriptExamples/example3/replicate.webtool.ipynb
