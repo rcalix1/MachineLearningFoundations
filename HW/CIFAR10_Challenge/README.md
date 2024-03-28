@@ -1,3 +1,4 @@
 ## CIFAR 10 Challenge
 
-* Data: 
+* Data: https://github.com/YoongiKim/CIFAR-10-images/tree/master
+* 
