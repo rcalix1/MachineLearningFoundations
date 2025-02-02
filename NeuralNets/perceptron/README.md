@@ -12,7 +12,7 @@
 
 ## Proof
 
-![proof](1962proofPerceptron.jpg)
+![proof](1962proofPerceptron.png)
 
 ## Papers
 
