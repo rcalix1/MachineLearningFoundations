@@ -1,4 +1,4 @@
-## NNs Math
+## NN Maths
 
 * Dot product
 * Calculate gradients
