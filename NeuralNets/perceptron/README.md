@@ -49,7 +49,7 @@ However, things change radically once the network contains at least one hidden l
 * 1958 - Rosenblatt - Perceptron Learning rule
 * 1962 - Proof by Albert Novakok
 * late 1960's - Minsky
-* 1957 - calculus and gradients
+* 1959 - Bernard Widrow and Ted Hoff - calculus and gradients
 * 1984 - Hinton
 
 ## Proof
