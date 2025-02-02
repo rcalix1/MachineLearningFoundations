@@ -5,7 +5,7 @@
 
 ## Timeline
 
-* 1940 - Rumelhart
+* 1958 - Rosenblatt - Perceptron Learning rule
 * 1957 - calculus and gradients
 * 1984 - Hinton
 
