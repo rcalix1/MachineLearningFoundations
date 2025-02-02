@@ -6,9 +6,13 @@
 ## Timeline
 
 * 1958 - Rosenblatt - Perceptron Learning rule
+* 1962 - Proof by Albert Novakok
 * 1957 - calculus and gradients
 * 1984 - Hinton
 
+## Proof
+
+![proof](1962proofPerceptron.jpg)
 
 ## Papers
 
