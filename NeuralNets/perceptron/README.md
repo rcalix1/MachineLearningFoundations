@@ -40,7 +40,9 @@ However, things change radically once the network contains at least one hidden l
 ## Hardware Perceptron
 
 * https://www.youtube.com/watch?v=l-9ALe3U-Fg&t=41s
-* 
+* Perceptron Circuit
+
+![circuit](perceptronCircuit.png)
 
 
 
