@@ -57,7 +57,7 @@ However, things change radically once the network contains at least one hidden l
   
 * 1959 - Bernard Widrow and Ted Hoff - calculus and gradients
 
-!(widrow)[widrow.png]
+![widrow](widrow.png)
   
 * 1962 - Proof by Albert Novikoff
 * late 1960's - Minsky
