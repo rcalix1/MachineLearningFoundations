@@ -53,11 +53,11 @@ However, things change radically once the network contains at least one hidden l
 * 1943 by McCulloch and Pitts
 * 1958 - Rosenblatt - Perceptron Learning rule - implemented
 
-!(rosenblatt)[https://github.com/rcalix1/MachineLearningFoundations/tree/main/NeuralNets/perceptron/images/rosenblatt.png]
+!(rosenblatt)[rosenblatt.png]
   
 * 1959 - Bernard Widrow and Ted Hoff - calculus and gradients
 
-!(widrow)[https://github.com/rcalix1/MachineLearningFoundations/tree/main/NeuralNets/perceptron/images/widrow.png]
+!(widrow)[widrow.png]
   
 * 1962 - Proof by Albert Novikoff
 * late 1960's - Minsky
