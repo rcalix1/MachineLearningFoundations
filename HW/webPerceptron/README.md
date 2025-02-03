@@ -5,4 +5,4 @@
 
 ## A visual example
 
-![perceptron](sdsd.png)
+![perceptron](websitePerceptronHW.png)
