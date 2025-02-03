@@ -57,6 +57,8 @@ However, things change radically once the network contains at least one hidden l
 
 ## Proof
 
+* 1962 - Proof by Albert Novakok
+
 ![proof](1962proofPerceptron.png)
 
 ## Notable papers
