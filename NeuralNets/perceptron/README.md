@@ -37,6 +37,13 @@ This type of network can't perform nonlinear classification or implement arbitra
 
 However, things change radically once the network contains at least one hidden layer with sigmoidal (or other nonlinear) activation function. Such a network can indeed perform nonlinear classification and approximate arbitrary functions (but doing so may require adding vastly more units to the network). This is a consequence of the universal approximation theorem.
 
+## The Perceptron Weight update rule
+
+* wi = wi + lr * (y_real - y_pred) * xi
+* (y_real - y_pred) -> is not squared
+* This equation comes from doing the partial derivatives of the cost (y_real - y_pred), in terms of the weights and biases
+* See my video for derivation: 
+
 ## Hardware Perceptron
 
 * https://www.youtube.com/watch?v=l-9ALe3U-Fg&t=41s
