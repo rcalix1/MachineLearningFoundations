@@ -41,7 +41,7 @@ However, things change radically once the network contains at least one hidden l
 
 * wi = wi + lr * (y_real - y_pred) * xi
 * (y_real - y_pred) -> is not squared
-* This equation comes from doing the partial derivatives of the cost (y_real - y_pred), in terms of the weights and biases
+* This equation comes from doing the partial derivatives of the loss (y_real - y_pred), in terms of the weights and biases
 * See my video for derivation: 
 
 ## Hardware Perceptron
