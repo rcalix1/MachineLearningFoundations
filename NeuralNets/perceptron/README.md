@@ -67,6 +67,8 @@ However, things change radically once the network contains at least one hidden l
 
 * 1962 - Proof by Albert Novikoff
 * https://cs.uwaterloo.ca/~y328yu/classics/novikoff.pdf
+* https://www.youtube.com/watch?v=kObhWlqIeD8
+* 
 
 ![proof](1962proofPerceptron.png)
 
