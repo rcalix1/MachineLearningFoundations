@@ -6,3 +6,8 @@
 ## A visual example
 
 ![perceptron](websitePerceptronHW.png)
+
+## PyScript Examples
+
+* https://github.com/rcalix1/MachineLearningFoundations/tree/main/DeployToWeb
+* 
