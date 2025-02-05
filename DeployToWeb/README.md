@@ -9,7 +9,11 @@
 * https://rcalix1.github.io/PyTorch/DeployToProduction/Sec1WineQuality/NN/
 * https://rcalix1.github.io/PyTorch/DeployToProduction/UseCamera/
 * https://rcalix1.github.io/PyTorch/DeployToProduction/WineQuality/XGBoost/
+
+## PyScript
+
 * https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/AppKNNiris/index.html
+* https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web/tree/main/volume-1-pyscript-and-knn/chapter3/AppKNNiris
 * https://pyscript.com/@examples
 * 
 
