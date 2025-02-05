@@ -12,7 +12,7 @@
 
 ## PyScript
 
-* https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/AppKNNiris/index.html
+* https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/AppKNNiris/index2.html
 * https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web/tree/main/volume-1-pyscript-and-knn/chapter3/AppKNNiris
 * https://pyscript.com/@examples
 * 
