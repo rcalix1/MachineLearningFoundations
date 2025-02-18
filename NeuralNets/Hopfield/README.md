@@ -10,7 +10,7 @@
 * and this allows us to create neural networks
 * Neural Nets can be of 2 types:
 * a) Feedforward Nets (all in one direction - directed acyclic graph)
-* b) Feedback nets (if notfeedforward, the a network is a feed back net)
+* b) Feedback nets (if not feedforward, then a network is a feed back net)
 * This classification depends on their connectivity
 * 
 
