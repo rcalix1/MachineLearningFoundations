@@ -31,6 +31,8 @@
 * The "outer product" operation can be seen in the next example:
 
 
+$$ 
+
 \[  
 \begin{bmatrix}  
   
@@ -50,6 +52,8 @@ u_3 v_1 & u_3 v_2 & u_3 v_3 & u_3 v_4 \\
 
 \end{bmatrix}  
 \]
+
+$$
 
 
 * 
