@@ -16,4 +16,8 @@
 
 ![feedBack](feedBackNets.jpeg)
 
+* they have been used to study associative memory. Memory can be used for anomaly detection, for instance
+
+## Hebbian Training
+
 * 
