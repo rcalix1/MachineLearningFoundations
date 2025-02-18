@@ -22,4 +22,38 @@
 
 * ![hebb](hebbBanana.jpeg)
 
+* Hopfield Networks  are sometimes called associative memory networks.
+* John Hopfield won the 2024 nobel prize in physics for this work.
+* They can be related to Information Theory because they can be used to store and re-construct (retrieve) information.
+* The number of neurons can determine the amount of information that can be stored in the model.
+* Hopfield Networks use the "outer product" multiplication to calculate the weights matrix.
+* The "outer product" is an operation in linear algebra which, given 2 vectors, can return a matrix.
+* The "outer product" operation can be seen in the next example:
+
+
+\[  
+\begin{bmatrix}  
+  
+u_1 \\  
+u_2 \\  
+u_3 \\  
+\end{bmatrix}  
+\begin{bmatrix}  
+v_1 & v_2 & v_3 & v_4 \\  
+
+\end{bmatrix}  
+=
+\begin{bmatrix}  
+u_1 v_1 & u_1 v_2 & u_1 v_3 & u_1 v_4 \\
+u_2 v_1 & u_2 v_2 & u_2 v_3 & u_2 v_4 \\
+u_3 v_1 & u_3 v_2 & u_3 v_3 & u_3 v_4 \\
+
+\end{bmatrix}  
+\]
+
+
 * 
+
+
+
+
