@@ -14,4 +14,6 @@
 * This classification depends on their connectivity
 * 
 
-![feedBack](perceptronCircuit.png)
+![feedBack](feedBackNets.jpeg)
+
+* 
