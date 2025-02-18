@@ -1,6 +1,6 @@
 ## The Perceptron
 
-From Wikipedia
+
 
 * The perceptron was invented in 1943 by McCulloch and Pitts.
 *  The first implementation was a machine built in 1958 at the Cornell Aeronautical Laboratory by Frank Rosenblatt
