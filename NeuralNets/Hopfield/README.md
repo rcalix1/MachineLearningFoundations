@@ -20,7 +20,7 @@
 
 ## Hebbian Training
 
-* ![hebb](hebbBanana.jpeg)
+![hebb](hebbBanana.jpeg)
 
 * Hopfield Networks  are sometimes called associative memory networks.
 * John Hopfield won the 2024 nobel prize in physics for this work.
@@ -30,34 +30,10 @@
 * The "outer product" is an operation in linear algebra which, given 2 vectors, can return a matrix.
 * The "outer product" operation can be seen in the next example:
 
-* ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-```
 
 
-$$ 
+ ![outerProd](outerProd.png)
 
-\[  
-\begin{bmatrix}  
-  
-u_1 \\  
-u_2 \\  
-u_3 \\  
-\end{bmatrix}  
-\begin{bmatrix}  
-v_1 & v_2 & v_3 & v_4 \\  
-
-\end{bmatrix}  
-=
-\begin{bmatrix}  
-u_1 v_1 & u_1 v_2 & u_1 v_3 & u_1 v_4 \\
-u_2 v_1 & u_2 v_2 & u_2 v_3 & u_2 v_4 \\
-u_3 v_1 & u_3 v_2 & u_3 v_3 & u_3 v_4 \\
-
-\end{bmatrix}  
-\]
-
-$$
 
 
 * 
