@@ -20,4 +20,6 @@
 
 ## Hebbian Training
 
-* ![hebb](feedBackNets.jpeg)
+* ![hebb](hebbBanana.jpeg)
+
+* 
