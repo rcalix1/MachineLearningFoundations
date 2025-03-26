@@ -11,3 +11,7 @@
 
 * https://github.com/rcalix1/TransferLearning/blob/main/fastai/ComputerVision/Fundamentals_of_computer_vision.ipynb
   
+## colab
+
+* https://stackoverflow.com/questions/71619540/how-to-upload-a-62-gb-datasets-to-google-colab
+* 
