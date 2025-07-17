@@ -10,5 +10,9 @@ if file:
     st.dataframe(df)
 
     if st.button("Predict"):
-        res = requests.post("http://localhost:8000/predict", files={"file": file})
+        res = requests.post(
+            "http://localhost:8000/predict",
+            files={"file": file},
+            headers={"x-api-key": "secret123"}
+        )
         st.write("Predictions:", res.json()["predictions"])

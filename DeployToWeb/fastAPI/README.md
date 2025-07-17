@@ -1,9 +1,9 @@
-# AI Model Deployment MVP
+# AI Model Deployment MVP (with API Key)
 
 This is a minimal full-stack AI product template that:
 - Serves your ML model using FastAPI
 - Provides a UI using Streamlit
-- Works locally or can be deployed to Render.com
+- Adds simple API key protection to secure public endpoints
 
 ## 🔧 Setup
 
@@ -34,7 +34,12 @@ streamlit run streamlit_app.py
 ```
 
 ## 🌐 Test it
-Upload a CSV with feature columns matching your model.
+Upload a CSV with feature columns matching your model. Auth header required:
+```bash
+curl -X POST http://localhost:8000/predict \
+  -H "x-api-key: secret123" \
+  -F "file=@yourfile.csv"
+```
 
 ## 🚀 Deploy (Optional)
 Use Render.com:
