@@ -6,12 +6,7 @@ This is a minimal full-stack AI product template that:
 - Adds simple API key protection to secure public endpoints
 
 """
-# AI Model Deployment MVP (with API Key)
 
-This is a minimal full-stack AI product template that:
-- Serves your ML model using FastAPI
-- Provides a UI using Streamlit
-- Adds simple API key protection to secure public endpoints
 
 ## ✅ Deploying Your FastAPI Server on a GPU Box
 
@@ -31,11 +26,7 @@ If you're using a GPU model (e.g., PyTorch or TensorFlow), install those too:
 pip install torch torchvision torchaudio  # or other ML libraries
 ```
 
-## 🔧 Setup
 
-```bash
-pip install -r requirements.txt
-```
 
 ### Train a model (optional)
 ```python
@@ -53,6 +44,13 @@ joblib.dump(model, "model.pkl")
 ```bash
 uvicorn app:app --reload
 ```
+
+### 🚀 3. Run the FastAPI Server
+Make sure you're in the directory with `app.py` and `model.pkl`:
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+Now the server is listening on all interfaces (your laptop can reach it).
 
 ## ▶️ Run Streamlit UI
 ```bash
@@ -77,12 +75,7 @@ Use Render.com:
 
 
 
-### 🚀 3. Run the FastAPI Server
-Make sure you're in the directory with `app.py` and `model.pkl`:
-```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
-```
-Now the server is listening on all interfaces (your laptop can reach it).
+
 
 ## 🌍 On Your Laptop: Send Data
 
