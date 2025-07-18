@@ -5,28 +5,11 @@ This is a minimal full-stack AI product template that:
 - Provides a UI using Streamlit
 - Adds simple API key protection to secure public endpoints
 
-"""
+## 🔧 Setup
 
-
-## ✅ Deploying Your FastAPI Server on a GPU Box
-
-### 🧱 1. Create a Conda Environment on the GPU box
-```bash
-conda create -n ai-deploy python=3.10 -y
-conda activate ai-deploy
-```
-
-### 📦 2. Install Requirements
-Place the `requirements.txt` file in the directory, then:
 ```bash
 pip install -r requirements.txt
 ```
-If you're using a GPU model (e.g., PyTorch or TensorFlow), install those too:
-```bash
-pip install torch torchvision torchaudio  # or other ML libraries
-```
-
-
 
 ### Train a model (optional)
 ```python
@@ -44,13 +27,6 @@ joblib.dump(model, "model.pkl")
 ```bash
 uvicorn app:app --reload
 ```
-
-### 🚀 3. Run the FastAPI Server
-Make sure you're in the directory with `app.py` and `model.pkl`:
-```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
-```
-Now the server is listening on all interfaces (your laptop can reach it).
 
 ## ▶️ Run Streamlit UI
 ```bash
@@ -73,9 +49,38 @@ Use Render.com:
 ---
 
 
+"""
+# AI Model Deployment MVP (with API Key)
 
+This is a minimal full-stack AI product template that:
+- Serves your ML model using FastAPI
+- Provides a UI using Streamlit
+- Adds simple API key protection to secure public endpoints
 
+## ✅ Deploying Your FastAPI Server on a GPU Box
 
+### 🧱 1. Create a Conda Environment on the GPU box
+```bash
+conda create -n ai-deploy python=3.10 -y
+conda activate ai-deploy
+```
+
+### 📦 2. Install Requirements
+Place the `requirements.txt` file in the directory, then:
+```bash
+pip install -r requirements.txt
+```
+If you're using a GPU model (e.g., PyTorch or TensorFlow), install those too:
+```bash
+pip install torch torchvision torchaudio  # or other ML libraries
+```
+
+### 🚀 3. Run the FastAPI Server
+Make sure you're in the directory with `app.py` and `model.pkl`:
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+Now the server is listening on all interfaces (your laptop can reach it).
 
 ## 🌍 On Your Laptop: Send Data
 
