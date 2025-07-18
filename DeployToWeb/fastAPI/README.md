@@ -5,11 +5,7 @@ This is a minimal full-stack AI product template that:
 - Provides a UI using Streamlit
 - Adds simple API key protection to secure public endpoints
 
-## 🔧 Setup
 
-```bash
-pip install -r requirements.txt
-```
 
 ### Train a model (optional)
 ```python
