@@ -47,7 +47,7 @@ must now handle real numbers.
 ### Gaussian = Continuous Equivalent of Counting
 
 We assume:
-x_j | c ~ Normal(mean_cj, var_cj)
+
 
 $$
 x_j \mid c \sim \mathcal{N}(\mu_{c,j},\, \sigma_{c,j}^2)
@@ -55,7 +55,7 @@ $$
 
 
 So instead of counting, we compute mean & variance and evaluate:
-P(x_j | c) = (1 / sqrt(2πσ²)) * exp(-(x_j - μ)² / (2σ²))
+
 
 
 $$
@@ -79,7 +79,15 @@ YES — Gaussian NB is the continuous analogue of Multinomial NB.
 Both compute:
 P(c) * Π_j P(x_j | c)
 
+$$
+P(c)\;\prod_{j} P(x_j \mid c)
+$$
+
+
 Only the form of P(x_j | c) changes.
+
+$P(x_j \mid c)$
+
 
 ### Final Translation Table
 
