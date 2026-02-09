@@ -268,7 +268,7 @@ Class B: large apples
 
 Feature = weight in grams (continuous)
 
-You measure some apples and compute:
+### You measure some apples and compute:
 
 Class A
 
