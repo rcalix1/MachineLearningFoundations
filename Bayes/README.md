@@ -100,7 +100,7 @@ changes.
 
 ### Final Translation Table
 
-| What you learned before       | What you're doing now        |       |                  |
+| Discrete Words      | Continuos features       |       |                  |
 | ----------------------------- | ---------------------------- | ----- | ---------------- |
 | Count word frequencies        | Compute mean & variance      |       |                  |
 | Categorical probability table | Gaussian probability density |       |                  |
