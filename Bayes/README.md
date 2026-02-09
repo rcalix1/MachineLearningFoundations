@@ -105,7 +105,7 @@ changes.
 | Count word frequencies        | Compute mean & variance      |       |                  |
 | Categorical probability table | Gaussian probability density |       |                  |
 | Multinomial Naive Bayes       | Gaussian Naive Bayes         |       |                  |
-| P(w_i                         | c) from counts               | P(x_j | c) from Gaussian |
+| P(w_i / c) from counts        |  P(x_j / c) from Gaussian    |
 
 They are structurally identical; only the likelihood model changes.
 
