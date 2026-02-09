@@ -91,9 +91,11 @@ $$
 
 
 
-Only the form of P(x_j | c) changes.
+Only the form of  
 
 $P(x_j \mid c)$
+
+changes.
 
 
 ### Final Translation Table
