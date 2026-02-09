@@ -82,17 +82,7 @@ YES — Gaussian NB is the continuous analogue of Multinomial NB.
 Both compute:
 P(c) * Π_j P(x_j | c)
 
-$$
-P(c)\;\prod_{j} P(x_j \mid c)
-$$
 
-$$
-P(c)\,\prod_{j} P(x_j \mid c)
-$$
-
-$$
-P(c)\,\prod_{j} P(x_j \mid c)
-$$
 
 
 $$
