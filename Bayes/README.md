@@ -380,6 +380,103 @@ This is exactly how Naive Bayes handles continuous features.
 **The Gaussian replaces word-count probabilities by giving the likelihood of a continuous value under each class.**
 
 
+---
+
+# Simple Example: Why Multiplication Becomes Addition When Using Logs
+
+This README shows a **tiny, runnable Python example** that demonstrates how
+multiplying probabilities is equivalent to **adding their logs**.
+
+
+
+---
+
+# ✅ Intuition
+
+Small probabilities multiply into even smaller numbers.
+Logs prevent underflow by turning:
+
+```
+a * b * c
+```
+
+into
+
+```
+log(a) + log(b) + log(c)
+```
+
+Both methods give the **same ordering**, and the log version is numerically safer.
+
+---
+
+# ✅ Fully Runnable Example
+
+We have two classes, and we compute which class is more likely using:
+
+* direct multiplication
+* log + addition
+
+Both will pick the same class.
+
+```python
+import numpy as np
+
+# Pretend these are likelihoods for three features under two classes
+# Class A probabilities
+A = [0.2, 0.5, 0.1]
+
+# Class B probabilities
+B = [0.3, 0.4, 0.05]
+
+# ---- Method 1: Multiply directly ----
+prod_A = np.prod(A)
+prod_B = np.prod(B)
+
+print("Direct multiply:")
+print("A:", prod_A)
+print("B:", prod_B)
+
+# ---- Method 2: Use logs (sum of logs) ----
+log_A = np.sum(np.log(A))
+log_B = np.sum(np.log(B))
+
+print("\nUsing logs:")
+print("A:", log_A)
+print("B:", log_B)
+
+# ---- Compare decisions ----
+print("\nClass chosen (multiply):", "A" if prod_A > prod_B else "B")
+print("Class chosen (log):", "A" if log_A > log_B else "B")
+```
+
+---
+
+# ✅ Expected Output (approx.)
+
+```
+Direct multiply:
+A: 0.010
+B: 0.006
+
+Using logs:
+A: -4.605
+B: -5.115
+
+Class chosen (multiply): A
+Class chosen (log): A
+```
+
+---
+
+# 🎯 Takeaway
+
+* Multiplying three small numbers gives **tiny results**.
+* Taking logs turns multiplication into **addition**, avoiding tiny values.
+* The **final comparison is identical**.
+
+This is why Naive Bayes—and many other ML methods—use log-probabilities.
+
 
 
 
