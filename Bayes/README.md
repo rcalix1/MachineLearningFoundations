@@ -72,7 +72,7 @@ $$
 
 Same purpose as word likelihoods, just adapted for continuous data.
 
-### Your Exact Question (Answered)
+### Key Insight
 
 YES — Gaussian NB is the continuous analogue of Multinomial NB.
 
