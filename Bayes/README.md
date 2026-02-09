@@ -36,7 +36,7 @@ $$
 
 But each 
 
-P(x_j | c) 
+
 
 $$
 P(x_j \mid c)
@@ -49,8 +49,24 @@ must now handle real numbers.
 We assume:
 x_j | c ~ Normal(mean_cj, var_cj)
 
+$$
+x_j \mid c \sim \mathcal{N}(\mu_{c,j},\, \sigma_{c,j}^2)
+$$
+
+
 So instead of counting, we compute mean & variance and evaluate:
 P(x_j | c) = (1 / sqrt(2πσ²)) * exp(-(x_j - μ)² / (2σ²))
+
+
+$$
+P(x_j \mid c)
+=
+\frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
+\exp\!\left(
+-\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2}
+\right)
+$$
+
 
 Same purpose as word likelihoods, just adapted for continuous data.
 
