@@ -66,6 +66,15 @@ P(x_j \mid c)=
 \right)
 $$
 
+$$
+P(x_j \mid c)=
+\frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
+\exp\left(
+-\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2}
+\right)
+$$
+
+
 
 Same purpose as word likelihoods, just adapted for continuous data.
 
