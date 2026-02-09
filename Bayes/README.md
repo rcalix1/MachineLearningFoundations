@@ -109,9 +109,6 @@ changes.
 
 They are structurally identical; only the likelihood model changes.
 
-This README now includes **all earlier explanations**, including the conceptual bridge between text‑based Naive Bayes and Gaussian Naive Bayes.
-
-This README provides a clear explanation of **why Naive Bayes looks different for text vs continuous features**, and includes **minimal, runnable code examples** for both.
 
 ---
 
