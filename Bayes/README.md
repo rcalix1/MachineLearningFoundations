@@ -58,13 +58,7 @@ So instead of counting, we compute mean & variance and evaluate:
 
 
 
-$$
-P(x_j \mid c)=
-\frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
-\exp\!\left(
--\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2}
-\right)
-$$
+
 
 $$
 P(x_j \mid c)=
@@ -91,6 +85,11 @@ P(c) * Π_j P(x_j | c)
 $$
 P(c)\;\prod_{j} P(x_j \mid c)
 $$
+
+$$
+P(c)\,\prod_{j} P(x_j \mid c)
+$$
+
 
 
 Only the form of P(x_j | c) changes.
