@@ -241,6 +241,11 @@ Both share the **same structure**:
 P(c \mid x) \propto P(c) \prod_j P(x_j \mid c)
 ]
 
+$$
+P(c \mid x) \propto P(c)\,\prod_{j} P(x_j \mid c)
+$$
+
+
 Only the **form of the likelihood** changes.
 
 ---
@@ -254,9 +259,5 @@ Only the **form of the likelihood** changes.
 
 ---
 
-Let me know if you want:
 
-* a hybrid NB example (categorical + continuous)
-* comparisons with scikit-learn
-* or a visual diagram of the two models.
 
