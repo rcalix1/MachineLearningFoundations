@@ -59,8 +59,7 @@ P(x_j | c) = (1 / sqrt(2πσ²)) * exp(-(x_j - μ)² / (2σ²))
 
 
 $$
-P(x_j \mid c)
-=
+P(x_j \mid c)=
 \frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
 \exp\!\left(
 -\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2}
