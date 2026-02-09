@@ -3,8 +3,9 @@
 
 # Naive Bayes: Multinomial vs Gaussian
 
-This README now includes **all earlier explanations**, including the conceptual bridge between text-based Naive Bayes and Gaussian Naive Bayes.
+* link
 
+  
 ## Understanding Why Gaussian NB Replaces Word Counts
 
 This expands the intuition behind why Gaussian NB is used for continuous features.
