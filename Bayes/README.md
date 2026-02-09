@@ -245,6 +245,10 @@ $$
 P(c \mid x) \propto P(c)\,\prod_{j} P(x_j \mid c)
 $$
 
+$$
+P(c) \times \prod_{j} P(x_j \mid c)
+$$
+
 
 Only the **form of the likelihood** changes.
 
