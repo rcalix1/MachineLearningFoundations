@@ -95,6 +95,12 @@ P(c)\,\prod_{j} P(x_j \mid c)
 $$
 
 
+$$
+P(c) \times \prod_{j} P(x_j \mid c)
+$$
+
+
+
 Only the form of P(x_j | c) changes.
 
 $P(x_j \mid c)$
