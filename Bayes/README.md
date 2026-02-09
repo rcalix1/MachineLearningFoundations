@@ -237,13 +237,7 @@ print(predict_gaussian(np.array([1.05, 2.1]), classes, means, vars_, priors))
 
 Both share the **same structure**:
 
-[
-P(c \mid x) \propto P(c) \prod_j P(x_j \mid c)
-]
 
-$$
-P(c \mid x) \propto P(c)\,\prod_{j} P(x_j \mid c)
-$$
 
 $$
 P(c) \times \prod_{j} P(x_j \mid c)
