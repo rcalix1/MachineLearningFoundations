@@ -90,6 +90,9 @@ $$
 P(c)\,\prod_{j} P(x_j \mid c)
 $$
 
+$$
+P(c)\,\prod_{j} P(x_j \mid c)
+$$
 
 
 Only the form of P(x_j | c) changes.
