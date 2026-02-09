@@ -29,6 +29,11 @@ So instead of frequencies, you must use a probability density model.
 Naive Bayes still assumes:
 P(x | c) = Π_j P(x_j | c)
 
+$$
+P(x \mid c) = \prod_{j=1}^{d} P(x_j \mid c)
+$$
+
+
 But each P(x_j | c) must now handle real numbers.
 
 ### Gaussian = Continuous Equivalent of Counting
