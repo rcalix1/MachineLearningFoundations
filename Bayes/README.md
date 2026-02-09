@@ -258,4 +258,129 @@ Only the **form of the likelihood** changes.
 ---
 
 
+## Simple Example: One Feature, Two Classes
+
+Suppose we are classifying apples:
+
+Class A: small apples
+
+Class B: large apples
+
+Feature = weight in grams (continuous)
+
+You measure some apples and compute:
+
+Class A
+
+mean weight: 100 g
+
+variance: 10²
+
+Class B
+
+mean weight: 200 g
+
+variance: 20²
+
+So we model:
+
+Weight of class A apples ~ Normal(100, 10²)
+
+Weight of class B apples ~ Normal(200, 20²)
+
+This is exactly what your code does: compute means and variances per class.
+
+Now you get a new apple weighing 120 g.
+
+You want:
+
+What is the probability this weight would come from class A vs class B?
+
+Since weight is continuous, you cannot count frequencies — almost no apple weighs exactly 120g.
+
+---
+
+# Simple Gaussian Naive Bayes Example
+
+A minimal, fully runnable example showing **why the Gaussian formula gives a valid likelihood** for a continuous feature.
+
+---
+
+## 🧠 Core Idea
+
+When features are **continuous** (like weight, height, temperature), you **cannot count frequencies** the way you do for text.
+
+So Naive Bayes assumes each feature is drawn from a **Gaussian distribution**:
+
+$$
+x_j \mid c \sim \mathcal{N}(\mu_{c,j},,\sigma_{c,j}^2)
+$$
+
+Then the likelihood for a new value is computed using the Gaussian PDF:
+
+$$
+P(x_j \mid c)=
+\frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
+\exp\left(
+-\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2}
+\right)
+$$
+
+---
+
+# ✅ Super Simple Working Code Example
+
+This example proves why the Gaussian gives a meaningful probability.
+
+We classify apples based on **weight**.
+
+```python
+import numpy as np
+
+# ---- Gaussian PDF ----
+def gaussian_pdf(x, mean, var):
+    return (1 / np.sqrt(2*np.pi*var)) * np.exp(- (x - mean)**2 / (2*var))
+
+# ---- Example data ----
+# Class A: small apples
+mean_A, var_A = 100, 10**2
+
+# Class B: large apples
+mean_B, var_B = 200, 20**2
+
+# New apple weight
+x = 120
+
+# ---- Likelihoods ----
+p_x_given_A = gaussian_pdf(x, mean_A, var_A)
+p_x_given_B = gaussian_pdf(x, mean_B, var_B)
+
+print("P(x=120 | Class A) =", p_x_given_A)
+print("P(x=120 | Class B) =", p_x_given_B)
+```
+
+### ✅ Expected Output
+
+```
+P(x=120 | Class A) ≈ 0.0054
+P(x=120 | Class B) ≈ 0.0000012
+```
+
+---
+
+# 🎯 Interpretation
+
+* **120g is close to Class A's mean (100g)** → Gaussian returns a **higher** likelihood.
+* **120g is far from Class B's mean (200g)** → Gaussian returns a **tiny** likelihood.
+
+This is exactly how Naive Bayes handles continuous features.
+
+### Final takeaway:
+
+**The Gaussian replaces word-count probabilities by giving the likelihood of a continuous value under each class.**
+
+
+
+
+
 
