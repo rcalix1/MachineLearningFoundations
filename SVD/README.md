@@ -91,4 +91,4 @@ print("NumPy:          ", S)
 - The eigenvalue solver **does not guarantee ordering**.  
 - SVD libraries (LAPACK, NumPy, MATLAB, PyTorch) explicitly **sort the singular values** and reorder \(U\) and \(V\) accordingly.  
 
-If you want, I can add additional sections (QR iteration, bidiagonalization, geometric interpretation, plots, etc.).
+
