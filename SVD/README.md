@@ -15,8 +15,7 @@ import numpy as np
 
 X = np.array([[3.0, 1.0],
               [2.0, 2.0]])
-print("Matrix X:
-", X)
+print("Matrix X:", X)
 ```
 
 ---
@@ -34,8 +33,7 @@ ightarrow 	ext{singular values}
 ### **Step A — Compute \(X^T X\)**
 ```python
 XtX = X.T @ X
-print("X^T X:
-", XtX)
+print("X^T X:", XtX)
 ```
 
 ### **Step B — Compute eigenvalues of \(X^T X\)**
@@ -43,8 +41,7 @@ Eigenvalues may come out **unordered** depending on the algorithm.
 ```python
 vals, vecs = np.linalg.eig(XtX)
 print("Eigenvalues (unordered):", vals)
-print("Eigenvectors:
-", vecs)
+print("Eigenvectors:", vecs)
 ```
 
 ### **Step C — Singular values are the square roots of eigenvalues**
@@ -69,10 +66,8 @@ NumPy computes the SVD using a stable algorithm (bidiagonalization + QR/divide�
 ```python
 U, S, Vt = np.linalg.svd(X, full_matrices=False)
 print("NumPy SVD singular values (always sorted):", S)
-print("U matrix:
-", U)
-print("V^T matrix:
-", Vt)
+print("U matrix:", U)
+print("V^T matrix:", Vt)
 ```
 
 ---
