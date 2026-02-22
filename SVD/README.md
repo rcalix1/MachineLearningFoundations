@@ -54,7 +54,7 @@ def get_recommendations(latent_matrix, movie_real_id, top_n=10):
 
 # 7. Run Test (Example: Inception ID 79132)
 k = 50  # Latent factors (50-100 is ideal for MovieLens)
-search_movie_id = 3948. ##79132
+search_movie_id = 3948 ##79132
 reduced_U = U[:, :k]
 
 top_indices = get_recommendations(reduced_U, search_movie_id, top_n=10)
@@ -72,7 +72,25 @@ for idx in top_indices:
 
 ```
 
+Results
 
+```
+
+Movies similar to: Meet the Parents (2000)
+------------------------------
+ID 6373: Bruce Almighty (2003)
+ID 59143: Super High Me (2007)
+ID 4016: Emperor's New Groove, The (2000)
+ID 30825: Meet the Fockers (2004)
+ID 65230: Marley & Me (2008)
+ID 7173: Along Came Polly (2004)
+ID 80489: Town, The (2010)
+ID 82852: Little Fockers (2010)
+ID 39715: American Pie Presents: Band Camp (American Pie 4: Band Camp) (2005)
+ID 34530: Deuce Bigalow: European Gigolo (2005)
+
+
+```
 
 
 # Tiny SVD Example — README.md Format
