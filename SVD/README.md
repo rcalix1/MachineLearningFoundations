@@ -1,3 +1,80 @@
+## SVD for recommender systems
+
+```
+
+import numpy as np
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+
+# 1. Load Data
+data_ratings = pd.read_csv('/content/drive/MyDrive/ratings.csv')
+data_movies = pd.read_csv('/content/drive/MyDrive/movies.csv')
+
+# 2. Setup ID Mappings
+movies_uniques = np.unique(data_ratings.movieId.values)
+users_uniques = np.unique(data_ratings.userId.values)
+
+movies_dict_real_ref = {res: idx for idx, res in enumerate(movies_uniques)}
+movies_dict_ref_real = {idx: res for idx, res in enumerate(movies_uniques)}
+users_dict_real_ref = {res: idx for idx, res in enumerate(users_uniques)}
+
+# 3. Create Pivot Matrix (Float32 for decimals/negative numbers)
+# Rows = Movies, Cols = Users
+ratings_mat = np.zeros(shape=(len(movies_uniques), len(users_uniques)), dtype=np.float32)
+
+for row in data_ratings.itertuples():
+    ref_u = users_dict_real_ref[row.userId]
+    ref_m = movies_dict_real_ref[row.movieId]
+    ratings_mat[ref_m, ref_u] = row.rating
+
+# 4. MEAN CENTERING (Fixes the "0" rating issue)
+# Subtract the average rating of each movie from its row.
+# We only average non-zero ratings to avoid dragging the mean down by unrated movies.
+movie_means = np.array([np.mean(row[row > 0]) if any(row > 0) else 0 for row in ratings_mat])
+ratings_mat_centered = ratings_mat - movie_means.reshape(-1, 1)
+# Keep unrated movies at 0 (now representing 'average')
+ratings_mat_centered[ratings_mat == 0] = 0
+
+# 5. SVD
+U, S, V = np.linalg.svd(ratings_mat_centered, full_matrices=False)
+
+# 6. Recommendation Function
+def get_recommendations(latent_matrix, movie_real_id, top_n=10):
+    ref_id = movies_dict_real_ref[movie_real_id]
+    movie_vector = latent_matrix[ref_id, :].reshape(1, -1)
+    
+    # Calculate true Cosine Similarity
+    scores = cosine_similarity(movie_vector, latent_matrix).flatten()
+    
+    # Sort DESCENDING (Highest score first)
+    top_indices = np.argsort(scores)[::-1]
+    
+    # Skip index 0 (the search movie itself)
+    return top_indices[1:top_n+1]
+
+# 7. Run Test (Example: Inception ID 79132)
+k = 50  # Latent factors (50-100 is ideal for MovieLens)
+search_movie_id = 3948. ##79132
+reduced_U = U[:, :k]
+
+top_indices = get_recommendations(reduced_U, search_movie_id, top_n=10)
+
+search_title = data_movies[data_movies.movieId == search_movie_id].title.values[0]
+print(f"Movies similar to: {search_title}\n" + "-"*30)
+
+for idx in top_indices:
+    real_id = movies_dict_ref_real[idx]
+    title = data_movies[data_movies.movieId == real_id].title.values[0]
+    print(f"ID {real_id}: {title}")
+
+
+
+
+```
+
+
+
+
 # Tiny SVD Example — README.md Format
 
 This README shows **two contrasting ways to compute singular values**:
