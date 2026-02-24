@@ -1,6 +1,5 @@
 # Least Squares via SVD 
 
-This document is formatted for perfect rendering in **GitHub**, **Jupyter Notebook**, and **VS Code**. All equations use standard LaTeX math blocks.
 
 ---
 
