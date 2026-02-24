@@ -64,6 +64,8 @@ $$ (X^T X) $$
 
 is singular or ill-conditioned.
 
+The normal least-squares formula only works when the matrix you need to invert is well-behaved. If the input data contains features that are duplicated, highly correlated, or almost linearly dependent, the matrix becomes singular (meaning it cannot be inverted) or ill-conditioned (meaning it can technically be inverted but produces unstable, wildly inaccurate results due to numerical sensitivity). In these situations, even tiny amounts of noise or rounding error can cause the solution to blow up or become meaningless. This is why practical systems avoid directly using the normal equation and instead rely on SVD, which produces stable results even when the data is poorly conditioned.
+
 ---
 
 # 🔢 SVD Decomposition
