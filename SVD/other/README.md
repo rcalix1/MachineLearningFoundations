@@ -177,6 +177,7 @@ When you plot your results, you show:
 1. The **true line**: (y = 3x)
 2. The **noisy sampled data**
 3. The **regression line** using
+   
    $$ \tilde{w} $$
 
 The regression line should be close to the true line.
