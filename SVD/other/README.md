@@ -33,15 +33,17 @@ $$
 
 Where:
 
-* $$ X \in \mathbb{R}^{n \times 1} $$
-* (Y \in \mathbb{R}^{n \times 1})
-* (w) is a scalar
+$$ X \in \mathbb{R}^{n \times 1} $$
+
+$$  (Y \in \mathbb{R}^{n \times 1})  $$
+
+(w) is a scalar
 
 The least-squares estimate solves:
 
-[
+$$
 \tilde{w} = \arg\min_w |Xw - Y|^2
-]
+$$
 
 ---
 
@@ -49,9 +51,9 @@ The least-squares estimate solves:
 
 The analytical formula is:
 
-[
+$$
 \tilde{w} = (X^T X)^{-1} X^T Y
-]
+$$
 
 However, this formula fails if (X^T X) is singular or ill-conditioned.
 
