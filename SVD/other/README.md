@@ -8,9 +8,9 @@ This document is formatted for perfect rendering in **GitHub**, **Jupyter Notebo
 
 We assume a linear relationship between an input feature **x**, a true weight **w**, and an output **y**:
 
-[
+$$
 y = w x + \epsilon
-]
+$$
 
 where:
 
