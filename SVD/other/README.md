@@ -27,13 +27,13 @@ Our goal is to estimate the weight (\tilde{w}) from data.
 
 We rewrite the system as:
 
-[
+$$
 Y = X w
-]
+$$
 
 Where:
 
-* (X \in \mathbb{R}^{n \times 1})
+* $$ X \in \mathbb{R}^{n \times 1} $$
 * (Y \in \mathbb{R}^{n \times 1})
 * (w) is a scalar
 
