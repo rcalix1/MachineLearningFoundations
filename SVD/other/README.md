@@ -95,7 +95,9 @@ $$
 X^{+} = V S^{-1} U^T
 $$
 
-This always exists as long as (\sigma \neq 0).
+This always exists as long as 
+
+$$ \sigma \neq 0 $$
 
 ---
 
@@ -103,15 +105,15 @@ This always exists as long as (\sigma \neq 0).
 
 The optimal estimate of the weight is:
 
-[
+$$
 \tilde{w} = X^{+} Y
-]
+$$
 
 Substituting the SVD form:
 
-[
+$$
 \tilde{w} = V S^{-1} U^T Y
-]
+$$
 
 This exactly matches your code:
 
@@ -121,15 +123,15 @@ wtilde = VT.T @ np.linalg.inv(np.diag(S)) @ U.T @ y
 
 If noise is small:
 
-[
+$$
 \tilde{w} \approx 3
-]
+$$
 
 If noise = 0:
 
-[
+$$
 \tilde{w} = 3
-]
+$$
 
 ---
 
@@ -143,9 +145,9 @@ wtilde2 = np.linalg.pinv(x) @ y
 
 Therefore:
 
-[
+$$
 \tilde{w} = \tilde{w}_1 = \tilde{w}_2
-]
+$$
 
 ---
 
@@ -153,15 +155,15 @@ Therefore:
 
 This is the simplest possible supervised learning model:
 
-[
+$$
 y = w x
-]
+$$
 
 Training means recovering the parameter:
 
-[
+$$
 \tilde{w} = \arg\min_w |Xw - Y|^2
-]
+$$
 
 Here, you solved it **analytically**, not with gradient descent.
 
@@ -173,26 +175,10 @@ When you plot your results, you show:
 
 1. The **true line**: (y = 3x)
 2. The **noisy sampled data**
-3. The **regression line** using (\tilde{w})
+3. The **regression line** using
+   $$ \tilde{w} $$
 
 The regression line should be close to the true line.
 
 ---
 
-## ✅ This README.md is ready to commit
-
-All math is compatible with:
-
-* GitHub Markdown
-* Jupyter Notebook
-* VS Code Markdown
-* GitLab
-
-If you want, I can now generate:
-
-* A full `README.md` combining explanation + code
-* A diagram showing SVD flow (U, S, V)
-* A version extended to multi‑dimensional regression
-* A version connecting this to **attention (QKᵀV)**
-
-Just tell me what you'd like next.
