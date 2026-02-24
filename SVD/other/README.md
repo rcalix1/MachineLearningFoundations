@@ -116,7 +116,7 @@ $$
 \tilde{w} = V S^{-1} U^T Y
 $$
 
-This exactly matches your code:
+This exactly matches our code:
 
 ```python
 wtilde = VT.T @ np.linalg.inv(np.diag(S)) @ U.T @ y
