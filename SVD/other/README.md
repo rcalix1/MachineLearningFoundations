@@ -19,7 +19,11 @@ where:
 * **y** is the observed output
 * **ε** is noise
 
-Our goal is to estimate the weight (\tilde{w}) from data.
+Our goal is to estimate the weight 
+
+$$ \tilde{w} $$
+
+from data.
 
 ---
 
