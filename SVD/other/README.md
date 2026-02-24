@@ -35,7 +35,7 @@ Where:
 
 $$ X \in \mathbb{R}^{n \times 1} $$
 
-$$  (Y \in \mathbb{R}^{n \times 1})  $$
+$$  Y \in \mathbb{R}^{n \times 1}  $$
 
 (w) is a scalar
 
@@ -55,7 +55,11 @@ $$
 \tilde{w} = (X^T X)^{-1} X^T Y
 $$
 
-However, this formula fails if (X^T X) is singular or ill-conditioned.
+However, this formula fails if 
+
+$$ (X^T X) $$
+
+is singular or ill-conditioned.
 
 ---
 
@@ -63,15 +67,17 @@ However, this formula fails if (X^T X) is singular or ill-conditioned.
 
 We compute the singular value decomposition of the input matrix:
 
-[
+$$
 X = U S V^T
-]
+$$
 
 Where:
 
-* (U \in \mathbb{R}^{n \times 1})
-* (S = [\sigma])
-* (V \in \mathbb{R}^{1 \times 1})
+$$ U \in \mathbb{R}^{n \times 1} $$
+
+$$ S = [\sigma] $$ 
+
+$$ V \in \mathbb{R}^{1 \times 1} $$
 
 This is a **rank‑1** matrix, making the math extremely clean.
 
@@ -81,9 +87,9 @@ This is a **rank‑1** matrix, making the math extremely clean.
 
 The pseudoinverse of (X) is:
 
-[
+$$
 X^{+} = V S^{-1} U^T
-]
+$$
 
 This always exists as long as (\sigma \neq 0).
 
