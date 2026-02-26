@@ -186,3 +186,13 @@ The regression line should be close to the true line.
 
 ---
 
+Some code examples from
+
+Data Driven Science & Engineering: Machine Learning, Dynamical Systems, and Control
+
+by S. L. Brunton and J. N. Kutz
+
+Cambridge Textbook, 2019
+
+---
+
