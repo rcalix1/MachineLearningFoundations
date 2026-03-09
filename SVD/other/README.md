@@ -226,8 +226,12 @@ $$
 
 $$
 (V\Sigma^T U^T)(U\Sigma V^T)
+$$
+
+
 ============================
 
+$$
 V\Sigma^T(U^TU)\Sigma V^T
 $$
 
@@ -235,8 +239,8 @@ $$
 U^TU = I
 $$
 
-# $$
 
+$$
 V\Sigma^T\Sigma V^T
 $$
 
