@@ -186,6 +186,135 @@ The regression line should be close to the true line.
 
 ---
 
+## Derivation
+
+$$
+w = (X^T X)^{-1} X^T y
+$$
+
+---
+
+### 1. Substitute 
+
+$X = U \Sigma V^T$
+
+like
+
+$$
+w =
+\big((U\Sigma V^T)^T (U\Sigma V^T)\big)^{-1}
+(U\Sigma V^T)^T y
+$$
+
+---
+
+### 2. Transpose
+
+$$
+(U\Sigma V^T)^T = V\Sigma^T U^T
+$$
+
+$$
+w =
+\big((V\Sigma^T U^T)(U\Sigma V^T)\big)^{-1}
+(V\Sigma^T U^T)y
+$$
+
+---
+
+### 3. Multiply inside
+
+$$
+(V\Sigma^T U^T)(U\Sigma V^T)
+============================
+
+V\Sigma^T(U^TU)\Sigma V^T
+$$
+
+$$
+U^TU = I
+$$
+
+# $$
+
+V\Sigma^T\Sigma V^T
+$$
+
+Thus
+
+$$
+w =
+(V\Sigma^T\Sigma V^T)^{-1}
+(V\Sigma^T U^T)y
+$$
+
+---
+
+### 4. Invert
+
+$$
+(V\Sigma^T\Sigma V^T)^{-1}
+==========================
+
+(V^T)^{-1}(\Sigma^T\Sigma)^{-1}V^{-1}
+$$
+
+$$
+V^{-1}=V^T
+$$
+
+# $$
+
+V(\Sigma^T\Sigma)^{-1}V^T
+$$
+
+---
+
+### 5. Substitute back
+
+$$
+w =
+\big[V(\Sigma^T\Sigma)^{-1}V^T\big]
+(V\Sigma^T U^T)y
+$$
+
+---
+
+### 6. Simplify
+
+$$
+w =
+V(\Sigma^T\Sigma)^{-1}(V^TV)\Sigma^T U^T y
+$$
+
+$$
+V^TV = I
+$$
+
+$$
+w =
+V(\Sigma^T\Sigma)^{-1}\Sigma^T U^T y
+$$
+
+---
+
+### 7. Diagonal simplification
+
+$$
+(\Sigma^T\Sigma)^{-1}\Sigma^T = \Sigma^{-1}
+$$
+
+---
+
+### Final
+
+$$
+\boxed{w = V\Sigma^{-1}U^T y}
+$$
+
+
+---
+
 Some code examples from
 
 Data Driven Science & Engineering: Machine Learning, Dynamical Systems, and Control
@@ -195,4 +324,5 @@ by S. L. Brunton and J. N. Kutz
 Cambridge Textbook, 2019
 
 ---
+
 
