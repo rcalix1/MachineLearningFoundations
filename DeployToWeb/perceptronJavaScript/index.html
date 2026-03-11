@@ -1,0 +1,38 @@
+<html>
+<head>
+  
+</head>
+<body>
+
+  <button id="predict">Predict</button>
+  <p id="output"></p>
+
+  <script>
+    weights = Array(16).fill(0);
+    weights[0] = ?? ;
+    weights[1] = ?? ;
+    ...
+    weights[15] = ??;
+    
+    bias = ?? ;
+
+    activation_function(z) {
+        return z >= 0 ? 1 : -1;
+    }
+    
+    predict( inputs ) {
+          let linear_product = np.dot(inputs, weights) + bias    
+          y_pred  = activation_function(    linear_product    );
+          return y_pred
+    }
+
+
+   
+    
+  </script>
+    
+</body>
+
+
+  
+</html>
