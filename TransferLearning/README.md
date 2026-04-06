@@ -33,7 +33,7 @@ print(classes[idx])
 
 
 
-## UNET for masking
+## UNET for masking and segmentation
 
 
 ```
