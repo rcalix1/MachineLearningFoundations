@@ -3,6 +3,11 @@
 * MLP
 * DL
 
+## CIFAR 10 - Dataset
+
+* https://github.com/YoongiKim/CIFAR-10-images/tree/master
+* 
+
 ## Save and load a PyTorch model
 
 * https://pytorch.org/tutorials/beginner/saving_loading_models.html
