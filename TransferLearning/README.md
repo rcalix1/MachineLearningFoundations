@@ -3,6 +3,7 @@
 * IMPORTANT: https://github.com/rcalix1/TransferLearning/blob/main/algorithms/ResNetFromTorch_freezeLayers.ipynb
 * VIT
 * You can find the fruit zip files here: https://github.com/rcalix1/DeepLearningAlgorithms/tree/main/SecondEdition/chapter6_CNNs
+* FruitsAdversarial.zip: https://github.com/rcalix1/CyberSecurityAndMachineLearning/tree/main/FirstEdition/Ch10_AIassurance/AdversarialML
 * https://github.com/rcalix1/DeepLearningAlgorithms/blob/main/SecondEdition/Chapter11_TransferLearning/TransferLearn.pdf
 * AlexNet: https://github.com/rcalix1/TransferLearning/tree/main/Vision
 * Lena blurring to understand convolutions: https://github.com/rcalix1/TransferLearning/tree/main/algorithms/CNNs
