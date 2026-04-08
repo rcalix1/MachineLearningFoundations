@@ -1,18 +1,23 @@
-## Phase 2: Transfer Learning
-
-* IMPORTANT: https://github.com/rcalix1/TransferLearning/blob/main/algorithms/ResNetFromTorch_freezeLayers.ipynb
-* VIT
-* You can find the fruit zip files here: https://github.com/rcalix1/DeepLearningAlgorithms/tree/main/SecondEdition/chapter6_CNNs
-* FruitsAdversarial.zip: https://github.com/rcalix1/CyberSecurityAndMachineLearning/tree/main/FirstEdition/Ch10_AIassurance/AdversarialML
-* https://github.com/rcalix1/DeepLearningAlgorithms/blob/main/SecondEdition/Chapter11_TransferLearning/TransferLearn.pdf
-* AlexNet: https://github.com/rcalix1/TransferLearning/tree/main/Vision
-* Lena blurring to understand convolutions: https://github.com/rcalix1/TransferLearning/tree/main/algorithms/CNNs
-
 ## Phase 1:
 
 * Data set is in this link:
 * Also Examples of code for Phase 1
 * https://github.com/rcalix1/MachineLearningFoundations/tree/main/NeuralNets/PyTorch
+* Lena blurring to understand convolutions: https://github.com/rcalix1/TransferLearning/tree/main/algorithms/CNNs
+
+
+## Phase 2: Transfer Learning
+
+* IMPORTANT: https://github.com/rcalix1/TransferLearning/blob/main/algorithms/ResNetFromTorch_freezeLayers.ipynb
+* AlexNet: https://github.com/rcalix1/TransferLearning/tree/main/Vision
+* https://github.com/rcalix1/DeepLearningAlgorithms/blob/main/SecondEdition/Chapter11_TransferLearning/TransferLearn.pdf
+
+## Phase 2: Transfer Learning with Vision Transformer (ViT)
+
+* VIT
+* FruitsAdversarial.zip: https://github.com/rcalix1/CyberSecurityAndMachineLearning/tree/main/FirstEdition/Ch10_AIassurance/AdversarialML
+* You can find the fruit zip files here: https://github.com/rcalix1/DeepLearningAlgorithms/tree/main/SecondEdition/chapter6_CNNs
+
 
 
 ## Get ImageNet class string from pred label (e.g. 601)
