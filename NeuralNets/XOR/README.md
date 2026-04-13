@@ -62,7 +62,7 @@ $$
 
 
 
-
+![widrow](widrow.png)
 
 
 ## Derivative of the Perceptron
