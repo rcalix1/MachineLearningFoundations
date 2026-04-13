@@ -191,6 +191,12 @@ $$
 > Move weights in proportion to the error and the input.
 
 ---
+---
+---
+
+![widrow](widrow.png)
+
+
 
 
 ## Widrow–Hoff (1959) — Two Inputs
