@@ -188,3 +188,106 @@ $$
 
 > Move weights in proportion to the error and the input.
 
+---
+
+
+## Widrow–Hoff (1959) — Two Inputs
+
+### Start
+
+$$
+\hat{y} = w_1 x_1 + w_2 x_2 + b
+$$
+
+---
+
+### Error
+
+$$
+e = y - \hat{y}
+$$
+
+---
+
+### Loss
+
+$$
+L = e^2
+$$
+
+---
+
+### Rule
+
+$$
+\frac{d}{dw}(e^2) = 2e \cdot \frac{de}{dw}
+$$
+
+---
+
+## Derivative w.r.t $w_1$
+
+$$
+\frac{de}{dw_1}
+= -\frac{d}{dw_1}(w_1 x_1 + w_2 x_2 + b)
+= -x_1
+$$
+
+$$
+\frac{dL}{dw_1}
+= 2e(-x_1)
+= -2(y - \hat{y})x_1
+$$
+
+---
+
+## Derivative w.r.t $w_2$
+
+$$
+\frac{de}{dw_2}
+= -\frac{d}{dw_2}(w_1 x_1 + w_2 x_2 + b)
+= -x_2
+$$
+
+$$
+\frac{dL}{dw_2}
+= 2e(-x_2)
+= -2(y - \hat{y})x_2
+$$
+
+---
+
+## Gradient Descent Update
+
+$$
+w_1 := w_1 - \eta \frac{dL}{dw_1}
+= w_1 + \eta (y - \hat{y}) x_1
+$$
+
+$$
+w_2 := w_2 - \eta \frac{dL}{dw_2}
+= w_2 + \eta (y - \hat{y}) x_2
+$$
+
+$$
+b := b + \eta (y - \hat{y})
+$$
+
+---
+
+## 🔑 Final Form (what students remember)
+
+$$
+\boxed{
+w_i := w_i + \eta (y - \hat{y}) x_i
+}
+$$
+
+---
+
+## 🧠 Simple idea
+
+$$
+\text{update for each weight} = \text{error} \times \text{its input}
+$$
+
