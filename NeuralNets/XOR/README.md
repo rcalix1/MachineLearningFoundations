@@ -194,7 +194,7 @@ $$
 ---
 ---
 
-![widrow](widrow.png)
+![widrowHoff](woordrowHoffChalkBoard.png)
 
 
 
