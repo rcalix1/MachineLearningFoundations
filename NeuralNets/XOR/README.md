@@ -59,7 +59,9 @@ $$
 \text{gradient} = 2 \cdot \text{error} \cdot x
 $$
 
-
+---
+---
+---
 
 
 ![widrow](widrow.png)
