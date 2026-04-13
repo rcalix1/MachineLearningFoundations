@@ -69,8 +69,6 @@ $$
 
 
 
-## Perceptron / Logistic Gradient (Matches Update Rule)
-
 ### Start
 
 $$
