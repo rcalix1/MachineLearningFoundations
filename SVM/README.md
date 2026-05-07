@@ -264,10 +264,9 @@ This corresponds to an implicit infinite-dimensional feature space.
 
 Using Taylor expansion:
 
+
 $$
 e^{2\gamma x^Tz}
-$$
-
 
 ================
 
