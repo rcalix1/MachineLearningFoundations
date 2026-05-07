@@ -266,6 +266,9 @@ Using Taylor expansion:
 
 $$
 e^{2\gamma x^Tz}
+$$
+
+
 ================
 
 \sum_{k=0}^{\infty}
