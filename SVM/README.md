@@ -262,27 +262,9 @@ $$
 
 This corresponds to an implicit infinite-dimensional feature space.
 
-Using Taylor expansion:
 
 
-$$
-e^{2\gamma x^Tz}
-
-================
-
-\sum_{k=0}^{\infty}
-\frac{(2\gamma x^Tz)^k}{k!}
-$$
-
-reveals that the RBF kernel contains:
-
-* degree 0 terms
-* degree 1 terms
-* degree 2 polynomial interactions
-* degree 3 terms
-* infinitely many higher-order interactions
-
-Thus the RBF kernel implicitly represents an infinite-dimensional feature mapping.
+The RBF kernel implicitly represents an infinite-dimensional feature mapping.
 
 ---
 
