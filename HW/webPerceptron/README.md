@@ -104,3 +104,14 @@ Bias potentiometer:
 
 
 ```
+
+## “Liminal” = threshold between states
+
+* The Liminal Engine
+* 
+
+
+
+
+
+
