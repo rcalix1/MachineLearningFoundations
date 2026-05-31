@@ -112,6 +112,70 @@ Bias potentiometer:
 
 
 
+## Circuit
+
+
+
+```
+
+5V
+ |
+Switch
+ |
+10k Pot
+ |
+1k resistor
+ |
+SUM BUS
+
+
+```
+
+and for the display 
+
+
+```
+
+5V
+ |
+330Ω
+ |
+LED
+ |
+Switch
+ |
+GND
+
+
+
+```
+
+
+and all neurons connected
+
+```
+
+
+
+Neuron 1 ----[1k]---+
+Neuron 2 ----[1k]---+
+Neuron 3 ----[1k]---+
+                    |
+Neuron 4 ----[1k]---+
+                    |
+        SUM BUS ----+---- Meter
+
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
