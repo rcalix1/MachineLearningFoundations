@@ -497,7 +497,25 @@ Meter - --------------- GND
 ```
 
 
+## Potentiometer configuration
 
+
+```
+
+
++5V ---- Pin 1
+           |
+      resistive track
+           |
+Pin 2 -------> output (wiper)
+           |
+      resistive track
+           |
+GND ---- Pin 3
+
+
+
+```
 
 
 
